@@ -18,7 +18,7 @@ server.listen(port, ()=>{
  */
 app.get('/',(request, response)=>{
     // dirname is our directory to this folder
-    response.sendStatus(200);
+    response.send('This is just some testing');
 });
 
 /**
