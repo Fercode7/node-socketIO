@@ -18,7 +18,7 @@ server.listen(port, ()=>{
  */
 app.get('/',(request, response)=>{
     // dirname is our directory to this folder
-    response.sendFile(__dirname+'/index.html');
+    response.sendStatus(200);
 });
 
 /**
@@ -35,8 +35,6 @@ io.on('connection', function(socket){
     console.log("Nuevo mensaje  " + message);
     io.emit('new message', {
         "mensaje": message
-    }
-    
-);
+    });
    });
 });
