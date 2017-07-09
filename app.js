@@ -1,5 +1,5 @@
 
-const port = process.env.port || 8000;
+const port = process.env.port || 3000;
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
@@ -10,7 +10,7 @@ const io = require('socket.io')(server); // I pass the server to the socket so w
  * We use this to listen to our port for any request
  */
 server.listen(port, ()=>{
-    console.log("Listenting in http://localhost:8000 port");
+    console.log("Listenting in http://localhost:"+port);
 });
 
 /**
