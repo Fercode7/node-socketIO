@@ -15,11 +15,6 @@ server.listen(port, ()=>{
     console.log("Listenting in http://localhost:"+port);
 });
 
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
-
 
 /**
  * Sending a response on the root acces of our localhost
