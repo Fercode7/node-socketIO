@@ -26,5 +26,17 @@ app.get('/',(request, response)=>{
  */
 io.on('connection', function(socket){
     console.log("User connected"); 
+    //User disconnected
+   socket.on('disconnect', function(){
+    console.log("User disconnected"); 
+   });
+   // We recieve a new event message from the android app
+   socket.on('new message', function(message){
+    console.log("Nuevo mensaje  " + message);
+    io.emit('new message', {
+        "mensaje": message
+    }
+    
+    );
+   });
 });
-
