@@ -6,12 +6,20 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server); // I pass the server to the socket so we can get a sync connection 
 
 
+
 /**
  * We use this to listen to our port for any request
  */
+
 server.listen(port, ()=>{
     console.log("Listenting in http://localhost:"+port);
 });
+
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
 
 /**
  * Sending a response on the root acces of our localhost
