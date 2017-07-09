@@ -10,7 +10,15 @@ const io = require('socket.io')(server); // I pass the server to the socket so w
  * We use this to listen to our port for any request
  */
 server.listen(port, ()=>{
-    console.log("Listenting in our http://localhost:8000 port");
+    console.log("Listenting in http://localhost:8000 port");
+});
+
+/**
+ * Sending a response on the root acces of our localhost
+ */
+app.get('/',(request, response)=>{
+    // dirname is our directory to this folder
+    response.sendFile(__dirname+'/index.html');
 });
 
 /**
