@@ -37,6 +37,6 @@ io.on('connection', function(socket){
         "mensaje": message
     }
     
-    );
+);
    });
 });
