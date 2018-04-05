@@ -26,7 +26,7 @@ usersRef.set({
 
 let hopperRed = ref.child('users/message');
 hopperRed.update({
-    mensaje:"wicho es puto"
+    mensaje:"Testing"
 });
 
 /**
